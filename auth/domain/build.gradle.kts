@@ -1,7 +1,7 @@
 plugins {
-    id("java-library")
-    alias(libs.plugins.jetbrains.kotlin.jvm)
+    alias(libs.plugins.run.jvm.library)
 }
-kotlin {
-    jvmToolchain(17)
+
+dependencies {
+    implementation(projects.core.domain)
 }

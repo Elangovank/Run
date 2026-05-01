@@ -6,10 +6,8 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.api.Project
 
 internal fun Project.configureBuildTypes(
-    commonExtension: CommonExtension,
-    extensionType: ExtensionType
+    commonExtension: CommonExtension
 ) {
-
     commonExtension.run {
         buildFeatures.buildConfig = true
         val apiKey = gradleLocalProperties(rootDir, providers).getProperty("API_KEY")

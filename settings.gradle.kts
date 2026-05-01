@@ -1,3 +1,5 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -22,7 +24,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Run"
+rootProject.name = "RunApp"
 include(":app")
 include(":auth:data")
 include(":auth:domain")

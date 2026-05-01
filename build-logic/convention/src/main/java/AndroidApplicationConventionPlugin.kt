@@ -1,6 +1,4 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.dsl.BuildType
-import com.elango.convention.ExtensionType
 import com.elango.convention.configureBuildTypes
 import com.elango.convention.configureKotlinAndroid
 import com.elango.convention.libs
@@ -13,10 +11,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         target.run {
             pluginManager.run {
                 apply("com.android.application")
-                apply("org.jetbrains.kotlin.plugin.compose")
             }
             extensions.configure<ApplicationExtension> {
-                namespace = "com.elango.run"
                 defaultConfig.apply {
                     applicationId = libs.findVersion("projectApplicationId").get().toString()
                     targetSdk = libs.findVersion("projectTargetSdkVersion").get().toString().toInt()
@@ -24,7 +20,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     versionName = libs.findVersion("projectVersionName").get().toString()
                 }
                 configureKotlinAndroid(this)
-                configureBuildTypes(this, ExtensionType.APPLICATION)
+                configureBuildTypes(this)
             }
         }
 
