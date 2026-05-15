@@ -38,6 +38,7 @@ kotlinx-serialization = "1.11.0"
 secretsPlugin = "2.0.1"
 playServicesMaps = "20.0.0"
 annotation = "1.10.0"
+dataStore = "1.2.1"
 
 
 # Project versions
@@ -99,6 +100,7 @@ org-mongodb-bson = { module = "org.mongodb:bson", version.ref = "bson" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 google-maps-android-utils-ktx = { module = "com.google.maps.android:maps-utils-ktx", version.ref = "mapsUtils" }
 annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 
 
 # Gradle

@@ -1,4 +1,4 @@
-package com.elango.core.domain
+package com.elango.core.domain.utils
 
 
 interface Error
@@ -7,7 +7,7 @@ sealed interface DataError : Error {
     enum class Network : DataError {
         REQUEST_TIMEOUT,
         TOO_MANY_REQUESTS,
-        CONFLICTS,
+        CONFLICT,
         UNAUTHORISED,
         SERVER_ERROR,
         PAYLOAD_TOO_LARGE,

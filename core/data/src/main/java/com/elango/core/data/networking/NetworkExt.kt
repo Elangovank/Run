@@ -1,7 +1,8 @@
-package com.elango.core.data
+package com.elango.core.data.networking
 
-import com.elango.core.domain.DataError
-import com.elango.core.domain.Result
+import com.elango.core.data.BuildConfig
+import com.elango.core.domain.utils.DataError
+import com.elango.core.domain.utils.Result
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.delete
@@ -80,7 +81,7 @@ suspend inline fun <reified T> responseToResult(networkResponse: HttpResponse): 
         in 200..299 -> Result.Success(networkResponse.body())
         401 -> Result.Error(DataError.Network.UNAUTHORISED)
         408 -> Result.Error(DataError.Network.REQUEST_TIMEOUT)
-        409 -> Result.Error(DataError.Network.CONFLICTS)
+        409 -> Result.Error(DataError.Network.CONFLICT)
         413 -> Result.Error(DataError.Network.PAYLOAD_TOO_LARGE)
         429 -> Result.Error(DataError.Network.TOO_MANY_REQUESTS)
         in 500..599 -> Result.Error(DataError.Network.SERVER_ERROR)

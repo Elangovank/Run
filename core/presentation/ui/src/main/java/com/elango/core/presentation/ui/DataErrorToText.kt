@@ -1,6 +1,6 @@
 package com.elango.core.presentation.ui
 
-import com.elango.core.domain.DataError
+import com.elango.core.domain.utils.DataError
 
 fun DataError.asUiText(): UiText {
     return when(this) {
