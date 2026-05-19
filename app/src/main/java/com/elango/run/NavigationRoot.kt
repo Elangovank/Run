@@ -12,6 +12,8 @@ import androidx.navigation.navigation
 import com.elango.auth.presentation.intro.IntroScreenRoot
 import com.elango.auth.presentation.login.LoginScreenRoot
 import com.elango.auth.presentation.register.RegisterScreenRoot
+import com.elango.run.presentation.active_run.ActiveRunScreenRoot
+import com.elango.run.presentation.run_overview.RunOverviewAction
 import org.w3c.dom.Text
 
 
@@ -82,7 +84,12 @@ fun NavGraphBuilder.authGraph(navController: NavController) {
 fun NavGraphBuilder.runGraph(navController: NavController) {
     navigation(startDestination = "auth_overview", route = "run") {
         composable(route = "auth_overview") {
-            Text(text = "welcome to Run!!!")
+            RunOverviewAction(onStartClick = {
+                navController.navigate("active_run")
+            })
+        }
+        composable(route = "active_run") {
+            ActiveRunScreenRoot()
         }
     }
 }
